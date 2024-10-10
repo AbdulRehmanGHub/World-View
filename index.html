@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World View</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./img/world.png" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,800italic"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">World View</h1>
+        <p class="dark-mode"><i class="fa-regular fa-moon"></i><span>Dark Mode</span></p>
+    </header>
+
+    <main>
+        <section class="search-filter">
+            <div class="search">
+                <input type="text" placeholder="Search for a country">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="filter">
+                <select name="Enter by Region" id="">
+                    <option value="filter-by-region" selected disabled hidden>Filter by Region</option>
+                    <option value="Africa">Africa</option>
+                    <option value="America">America</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="data">
+            <div class="country_box">
+                <a href="#" class="countryCard">
+                    <img src="./img/pk flag.png" alt="img">
+                    <div class="box-text">
+                        <h3>United States of America</h3>
+                        <p>Population: <span> 25,00,00,000</span></p>
+                        <p>Region: <span> Asia</span></p>
+                        <p>Capital: <span> Islamabad</span></p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
