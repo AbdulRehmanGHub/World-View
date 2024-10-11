@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: Nunito, sans-serif;
+    background-color: #fafafa;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    min-height: 3.4rem;
+    padding: 0 4rem;
+    box-shadow: 0px 2px 1px rgba(155, 155, 155, 0.164);
+}
+
+header h1 {
+    font-weight: 800;
+}
+
+header p {
+    font-size: .8rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .6rem;
+}
+
+header p i {
+    transform: rotate(-25deg);
+}
+
+.prevPage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+}
+
+.btnLink {
+    position: relative;
+    text-decoration: none;
+}
+
+.backBtn {
+    width: 8rem;
+    height: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 1px 1px 6px 1px rgba(29, 29, 29, 0.253);
+    color: #222;
+}
+
+.backBtn i {
+    font-size: 1rem;
+}
+
+.data {
+    display: flex;
+    align-items: center;
+    padding: 2rem 4rem;
+}
+
+.data .country_box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.2rem;
+}
+
+.country_box .countryFlag {
+    width: 40%;
+}
+
+.country_box img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    box-shadow: 2px 2px 6px rgba(155, 155, 155, 0.164);
+}
+
+.country_box .box-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem;
+    gap: 1rem;
+}
+
+.box-text h3 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.box-text_paras {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 4rem;
+    gap: 1.4rem;
+}
+
+.box-text p {
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.box-text p span {
+    font-weight: 300;
+}
+
+.countryBorders {
+    height: 4rem;
+    display: flex;
+    align-items: flex-end;
+}
+
+.countryBorders a {
+    text-decoration: none;
+    color: black;
+}
+
+.border_btn {
+    display: flex;
+    gap: .6rem;
+    padding: 0 1.2rem;
+}
+
+.border_btn span {
+    border: 1px solid rgba(0, 0, 0, 0.082);
+    padding: .2rem 1rem;
+    box-shadow: 2px 2px 6px rgba(155, 155, 155, 0.164);
+}

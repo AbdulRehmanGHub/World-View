@@ -37,10 +37,6 @@ header p i {
     transform: rotate(-25deg);
 }
 
-main{
-
-}
-
 .search-filter {
     display: flex;
     align-items: center;
@@ -95,7 +91,6 @@ option {
 
 .data {
     display: flex;
-    border: 2px solid red;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -103,11 +98,12 @@ option {
     padding: 2rem 4rem;
 }
 
-.country_box {
-    border: 2px solid green;
+.data .country_box {
+    /* border: 2px solid red; */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .country_box a {
@@ -126,15 +122,14 @@ option {
     justify-content: center;
 }
 
-.country_box img {
+.country_box a img {
     width: 100%;
-    height: auto;
-    min-height: 200px auto; /* Adjust this value to fit the mid of the container */
-    object-fit: cover; /* Ensures the image covers the area and is centered */
+    height: 140px;
+    object-fit: cover;
     box-shadow: 2px 2px 6px rgba(155, 155, 155, 0.164);
 }
 
-.country_box .box-text {
+.country_box a .box-text {
     display: flex;
     flex-direction: column;
     justify-content: center;

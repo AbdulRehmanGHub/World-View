@@ -24,25 +24,31 @@
 //   countryBox.style.backgroundColor = "#2b3743";
 // });
 
-const countryContainer = document.querySelector(".country_box");
+// const countryContainer = document.querySelector(".country_box");
 
-fetch("https://restcountries.com/v3.1/all")
-  .then((res) => res.json())
-  .then((data) => {
-    data.forEach((country) => {
-      console.log(country);
+// fetch("https://restcountries.com/v3.1/all")
+//   .then((res) => res.json())
+//   .then((data) => {
+//     data.forEach((country) => {
+//       console.log(country);
 
-      const countryCard = document.createElement("a");
-      countryCard.classList.add("countryCard");
-      countryCard.innerHTML = `
-            <img src="${country.flags.svg}" alt="img">
-            <div class="box-text">
-                <h3>${country.name.common}</h3>
-                <p>Population: <span> ${country.population.toLocaleString()}</span></p>
-                <p>Region: <span> ${country.region}</span></p>
-                <p>Capital: <span> ${country.capital?.[0]}</span></p>
-            </div>
-        `
-      countryContainer.append(countryCard);
-    });
-  });
+//       const countryCard = document.createElement("a");
+//       countryCard.href = `./countryPage/country.html?name=${country.name.common}`;
+//       countryCard.classList.add("countryCard");
+
+//       countryCard.innerHTML = `
+//         <img src="${country.flags.svg}" alt="img">
+//           <div class="box-text">
+//             <h3>${country.name.common}</h3>
+//             <p>Population: <span> ${country.population.toLocaleString()}</span></p>
+//             <p>Region: <span> ${country.region}</span></p>
+//             <p>Capital: <span> ${country.capital?.[0]}</span></p>
+//         </div>
+//       `;
+
+//       countryContainer.append(countryCard);
+//     });
+//   });
+
+// let countryName = 'https://restcountries.com/v3.1/name/aruba?fullText=true';
+// console.log(countryName);
