@@ -5,16 +5,30 @@
 }
 
 body {
+    --background-color: #fafafa;
+    --text-color: #000;
+    --elem-color: #fff;
+
     font-size: 62.5%;
     font-family: Nunito, sans-serif;
-    background-color: #fafafa;
+    cursor: default;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: ease-in-out .5s;
+}
+
+body.dark {
+    --background-color: hsl(207, 26%, 17%);
+    --text-color: #fff;
+    --elem-color: hsl(209, 23%, 22%);
+    transition: ease-in-out .5s;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: inherit;
     min-height: 3.4rem;
     padding: 0 4rem;
     box-shadow: 0px 2px 1px rgba(155, 155, 155, 0.164);
@@ -22,6 +36,11 @@ header {
 
 header h1 {
     font-weight: 800;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
 }
 
 header p {
@@ -42,11 +61,14 @@ header p i {
     align-items: center;
     justify-content: space-between;
     padding: 2rem 4rem;
+    color: var(--text-color);
 }
 
 .btnLink {
     position: relative;
     text-decoration: none;
+    background-color: inherit;
+    color: inherit;
 }
 
 .backBtn {
@@ -60,7 +82,7 @@ header p i {
     border: none;
     border-radius: 4px;
     box-shadow: 1px 1px 6px 1px rgba(29, 29, 29, 0.253);
-    color: #222;
+    color: inherit;
 }
 
 .backBtn i {
@@ -76,13 +98,10 @@ header p i {
 .data .country_box {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    gap: 2.2rem;
-}
-
-.country_box .countryFlag {
-    width: 40%;
+    justify-content: center;
+    gap: 3rem;
 }
 
 .country_box img {
@@ -97,7 +116,7 @@ header p i {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 2rem;
+    /* align-items: center; */
     gap: 1rem;
 }
 
@@ -108,9 +127,8 @@ header p i {
 
 .box-text_paras {
     display: flex;
-    justify-content: space-between;
-    padding-right: 4rem;
-    gap: 1.4rem;
+    justify-content: flex-start;
+    gap: 4rem;
 }
 
 .box-text p {
@@ -123,20 +141,30 @@ header p i {
 }
 
 .countryBorders {
-    height: 4rem;
+    margin-top: 1.8rem;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .countryBorders a {
     text-decoration: none;
-    color: black;
+    color: inherit;
+}
+
+.border_box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 .6rem;
+    gap: 1rem;
+    font-size: .8rem;
 }
 
 .border_btn {
     display: flex;
+    flex-wrap: wrap;
     gap: .6rem;
-    padding: 0 1.2rem;
 }
 
 .border_btn span {

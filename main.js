@@ -1,54 +1,50 @@
-// const body = document.querySelector("body");
-// const header = document.querySelector("header");
-// const bgMode = document.querySelector(".dark-mode");
-// const search = document.querySelector(".search input");
-// const filter = document.querySelector(".filter select");
+// Theme - Colors
+const changeTheme = document.querySelector(".dark-mode");
+const themeText = document.querySelector(".themeText");
+flag = 1;
+changeTheme.addEventListener("click", () => {
+  if (flag == 0) {
+    document.body.classList.add("dark");
+    themeText.innerHTML = "Light Mode";
+    flag = 1;
+  } else {
+    document.body.classList.remove("dark");
+    themeText.innerHTML = "Dark Mode";
+    flag = 0;
+  }
+});
 
-// const main = document.querySelector("main");
-// const countryBox = document.querySelector(".country_box");
+const countryContainer = document.querySelector(".country_box");
+const filterByRegion = document.querySelector("#filterByRegion");
 
-// bgMode.addEventListener("click", () => {
-//   body.style.backgroundColor = "#202d36";
-//   body.style.color = "#fff";
-//   header.style.backgroundColor = "#2b3743";
-//   search.style.backgroundColor = "#2b3743";
-//   filter.style.backgroundColor = "#2b3743";
-//   search.style.color = "#fff";
-//   filter.style.color = "#fff";
+function showCountries(data) {
+  countryContainer.innerHTML = "";
+  data.forEach((country) => {
+    //   console.log(country);
 
-//   search.style.boxShadow = "1px 1px 1px rgba(155, 155, 155, 0.164)";
-//   filter.style.boxShadow = "1px 1px 1px rgba(155, 155, 155, 0.164)";
-//   search.style.boxShadow = "1px 1px 1px rgba(155, 155, 155, 0.164)";
-//   countryBox.style.boxShadow = "1px 1px 1px rgba(155, 155, 155, 0.164)";
+    const countryCard = document.createElement("a");
+    countryCard.href = `./countryPage/country.html?name=${country.name.common}`;
+    countryCard.classList.add("countryCard");
 
-//   countryBox.style.backgroundColor = "#2b3743";
-// });
+    countryCard.innerHTML = `
+        <img src="${country.flags.svg}" alt="img">
+          <div class="box-text">
+            <h3>${country.name.common}</h3>
+            <p>Population: <span> ${country.population.toLocaleString()}</span></p>
+            <p>Region: <span> ${country.region}</span></p>
+            <p>Capital: <span> ${country.capital?.[0]}</span></p>
+        </div>
+      `;
+    countryContainer.append(countryCard);
+  });
+}
 
-// const countryContainer = document.querySelector(".country_box");
+fetch("https://restcountries.com/v3.1/all")
+  .then((res) => res.json())
+  .then(showCountries);
 
-// fetch("https://restcountries.com/v3.1/all")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     data.forEach((country) => {
-//       console.log(country);
-
-//       const countryCard = document.createElement("a");
-//       countryCard.href = `./countryPage/country.html?name=${country.name.common}`;
-//       countryCard.classList.add("countryCard");
-
-//       countryCard.innerHTML = `
-//         <img src="${country.flags.svg}" alt="img">
-//           <div class="box-text">
-//             <h3>${country.name.common}</h3>
-//             <p>Population: <span> ${country.population.toLocaleString()}</span></p>
-//             <p>Region: <span> ${country.region}</span></p>
-//             <p>Capital: <span> ${country.capital?.[0]}</span></p>
-//         </div>
-//       `;
-
-//       countryContainer.append(countryCard);
-//     });
-//   });
-
-// let countryName = 'https://restcountries.com/v3.1/name/aruba?fullText=true';
-// console.log(countryName);
+filterByRegion.addEventListener("change", () => {
+  fetch(`https://restcountries.com/v3.1/region/${filterByRegion.value}`)
+    .then((res) => res.json())
+    .then(showCountries);
+});
