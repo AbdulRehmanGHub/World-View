@@ -48,3 +48,27 @@ filterByRegion.addEventListener("change", () => {
     .then((res) => res.json())
     .then(showCountries);
 });
+
+const searchCountry = document.querySelector("#search-country");
+
+searchCountry.addEventListener("input", (e) => {
+  let typedValue = e.target.value.trim();
+  console.log(typedValue);
+
+  if (typedValue) {
+    fetch(`https://restcountries.com/v3.1/name/${typedValue}`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Country Not Found!");
+        return res.json();
+      })
+      .then(showCountries)
+      .catch((error) => {
+        console.error(error);
+        countryContainer.innerHTML = `<p>No Country Found with "${typedValue}" Name.</p>`;
+      });
+  } else {
+    fetch(`https://restcountries.com/v3.1/all`)
+      .then((res) => res.json())
+      .then(showCountries);
+  }
+});
