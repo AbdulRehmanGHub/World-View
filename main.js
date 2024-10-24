@@ -53,7 +53,7 @@ const searchCountry = document.querySelector("#search-country");
 
 searchCountry.addEventListener("input", (e) => {
   let typedValue = e.target.value.trim();
-  console.log(typedValue);
+  // console.log(typedValue);
 
   if (typedValue) {
     fetch(`https://restcountries.com/v3.1/name/${typedValue}`)

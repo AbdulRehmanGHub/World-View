@@ -169,3 +169,46 @@ option {
 .box-text p span {
     font-weight: 300;
 }
+
+
+@media (max-width: 768px) {
+    header {
+        padding: 0 1rem;
+    }
+
+    .search-filter {
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 0;
+        gap: 1.2rem;
+    }
+
+    .search {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search input {
+        width: 80%;
+        padding: 1rem 1rem 1rem 2.4rem;
+    }
+
+    .search i {
+        left: 14%;
+    }
+
+    .data {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+    }
+
+    .data .country_box {
+        justify-content: center;
+        row-gap: 2rem;
+        column-gap: 5rem;
+    }
+}
